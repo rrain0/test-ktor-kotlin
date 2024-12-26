@@ -6,12 +6,24 @@ import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.plugins.defaultheaders.*
 import io.ktor.server.plugins.forwardedheaders.*
 
-fun Application.configureHTTP() {
-  install(ForwardedHeaders) // WARNING: for security, do not include this if not behind a reverse proxy
-  install(XForwardedHeaders) // WARNING: for security, do not include this if not behind a reverse proxy
+fun Application.configureHttp() {
+  
+  
+  // Use proxy server forwarded & x-forwarded headers
+  // WARNING: for security, do not include this if not behind a reverse proxy
+  install(ForwardedHeaders)
+  install(XForwardedHeaders)
+  
+  
   install(DefaultHeaders) {
     header("X-Engine", "Ktor") // will send this header with each response
   }
+  
+  
+  /*
+    CORS - Cross-Origin Resource Sharing
+    CORS response will be sent on preflight request
+   */
   install(CORS) {
     
     allowCredentials = true
@@ -31,7 +43,6 @@ fun Application.configureHTTP() {
     maxAgeInSeconds = 2 * 60 * 60 // results of preflight request will be valid for 2 hours
     
     //allowHost("localhost:5173", listOf("http","https"))
-    
-    anyHost() // @TODO: Don't do this in production if possible. Try to limit it.
+    //anyHost()
   }
 }

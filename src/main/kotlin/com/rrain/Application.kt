@@ -11,7 +11,7 @@ fun main(args: Array<String>): Unit = io.ktor.server.jetty.jakarta.EngineMain.ma
 
 fun Application.module() {
   configureJsonSerialization()
-  configureHTTP()
+  configureHttp()
   configureRouting()
   
   
