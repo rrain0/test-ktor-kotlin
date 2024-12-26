@@ -1,0 +1,11 @@
+{
+  en: {
+    chessForFree: 'Chess for free',
+    //privacyPolicy: 'Privacy Policy',
+    //chessOnline: 'Chess online',
+    //checkers: 'Checkers'
+    optionLevelType: {
+      18: 'AI'
+    },
+  }
+}

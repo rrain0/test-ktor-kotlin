@@ -1,0 +1,27 @@
+{
+  en: {
+    mandatoryTaken: 'Taking is mandatory',
+    CheckersRuRules: {
+      0: 'A simple checker moves diagonally forward one square',
+      1: "A simple checker is taken both forward and backward.\nThe checker next to the opponent's checker, behind which there is an empty field, is transferred to this field",
+      2: "Taking is mandatory: if there is an opportunity to take the opponent's checker, the player must take",
+      3: "If there is an opportunity to continue taking other opponent's checkers, then this continues until the striking shashKa will not reach a position from which combat is impossible.",
+      4: 'With several options for taking, for example, one or two checkers, the player can choose any option',
+      5: 'When the last horizontal row is reached, a simple checker turns into a king',
+      6: 'The queen walks diagonally on any free field both forward and backward, but cannot jump her checkers or queens',
+      7: 'The queen hits diagonally as forward, so back, and stands on any free field after a beaten checker',
+      8: "The queen can beat several opponent's pieces and must beat as long as possible",
+    },
+    CheckersEnRules: {
+      0: 'A simple checker moves diagonally forward one square',
+      1: "A simple checker is taken forward only.\nThe checker next to the opponent's checker, behind which there is an empty field, is transferred to this field",
+      2: "Taking is mandatory: if there is an opportunity to take the opponent's checker, the player must take",
+      3: "If there is an opportunity to continue taking other opponent's checkers, then this continues until the striking shashKa will not reach a position from which combat is impossible.",
+      4: 'With several options for taking, for example, one or two checkers, the player can choose any option',
+      5: 'Upon reaching the last horizontal row, a simple checker turns into a king',
+      6: 'The queen walks diagonally both forward and backward one square',
+      7: "The queen hits diagonally, both forward and backward, if there is an empty field behind the opponent's checker",
+      8: "The queen can beat several opponent's pieces and must beat as long as possible",
+    },
+  }
+}
