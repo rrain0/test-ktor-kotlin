@@ -62,7 +62,7 @@ suspend fun HttpClient.yandexTranslateRequest(data: TranslateData): List<String>
   
   val response = post("https://translate.api.cloud.yandex.net/translate/v2/translate") {
     headers {
-      bearerAuth("t1.9euelZqQzZnKkpuUjZOVyZPPzoqax-3rnpWaj4_Im8aazsaUlo3LisrOxorl8_dNNSVJ-e84Y3Uq_N3z9w1kIkn57zhjdSr8zef1656VmpbNz8fMyImamZCKmZTKnM-e7_zN5_XrnpWakZadiZCXiZ2Kxp6bk46JmI7v_cXrnpWals3Px8zIiZqZkIqZlMqcz54.amGjJ9AjtjJtUUPwVBVBmU5u13tV0Fow3a_JFzH1K_LB5CIUMNH11j2ZDi5wEajYSHKliYX5pXPYaeygpuqJBw")
+      bearerAuth("t1.9euelZqQzZnKkpuUjZOVyZPPzoqax-3rnpWaj4_Im8aazsaUlo3LisrOxorl8_dNNSVJ-e84Y3Uq_?????????????????????????????????????????")
       contentType(ContentType.Application.Json)
     }
     setBody(data)
