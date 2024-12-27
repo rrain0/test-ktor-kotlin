@@ -5,7 +5,7 @@ plugins {
   alias(libs.plugins.kotlin.plugin.serialization)
 }
 
-group = "com.rrain"
+group = "com.rrain.testktorkotlin"
 version = "0.0.1"
 
 application {
@@ -57,4 +57,7 @@ dependencies {
   implementation("io.ktor:ktor-server-default-headers-jvm:${libs.versions.ktor.version}")
   implementation("io.ktor:ktor-server-cors-jvm:${libs.versions.ktor.version}")
   
+  // Testing
+  testImplementation(libs.ktor.server.test.host)
+  testImplementation(libs.kotlin.test.junit)
 }

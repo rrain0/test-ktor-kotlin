@@ -45,3 +45,7 @@ mongodb-bson-kotlinx = { module = "org.mongodb:bson-kotlinx", version.ref = "mon
 
 # Mail sending
 apache-email = { module = "org.apache.commons:commons-email", version.ref = "apache-email" }
+
+# Testing
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor-version" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
