@@ -1,10 +1,10 @@
 package com.rrain.testktorkotlin.client.`yandex-translate`
 
 import com.rrain.testktorkotlin.client.createClient
-import com.rrain.testktorkotlin.service.json.createJacksonJson5Mapper
-import com.rrain.testktorkotlin.util.cast
-import com.rrain.testktorkotlin.util.getResourcePath
-import com.rrain.testktorkotlin.util.println
+import com.rrain.util.json.createJacksonJson5Mapper
+import com.rrain.util.any.cast
+import com.rrain.testktorkotlin.util.path.getResourcePath
+import com.rrain.util.print.println
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*

@@ -1,4 +1,4 @@
-package com.rrain.testktorkotlin.util
+package com.rrain.testktorkotlin.util.path
 
 import java.io.FileNotFoundException
 import java.net.URL

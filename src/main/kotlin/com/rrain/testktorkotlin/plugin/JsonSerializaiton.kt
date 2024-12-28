@@ -1,8 +1,7 @@
 package com.rrain.testktorkotlin.plugin
 
 import com.fasterxml.jackson.databind.*
-import com.rrain.testktorkotlin.service.json.configureJson
-import com.rrain.testktorkotlin.service.json.configureJson5
+import com.rrain.util.json.configureJson5
 import io.ktor.serialization.jackson.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*

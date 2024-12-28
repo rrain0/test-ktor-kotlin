@@ -1,6 +1,6 @@
-package com.rrain.testktorkotlin.util.Any
+package com.rrain.util.any
 
-import com.rrain.testktorkotlin.util.Bool.bool
+import com.rrain.util.bool.bool
 
 
 inline fun <reified T> Any?.cast(): T = this as T

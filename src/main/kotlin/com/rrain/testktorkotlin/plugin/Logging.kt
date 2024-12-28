@@ -1,7 +1,7 @@
 package com.rrain.testktorkotlin.plugin
 
-import com.rrain.testktorkotlin.util.Any.mapNull
-import com.rrain.testktorkotlin.util.Any.mapTruly
+import com.rrain.util.any.mapNull
+import com.rrain.util.any.mapTruly
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*

@@ -1,4 +1,4 @@
-package com.rrain.testktorkotlin.util.DateTime
+package com.rrain.util.`date-time`
 
 import java.time.*
 import java.time.format.DateTimeFormatter
@@ -18,7 +18,7 @@ fun zonedNow(): ZonedDateTime = ZonedDateTime.now(ZoneOffset.UTC) // this is jus
     => Wed Aug 26 2020 07:23:27 GMT+0800 (Иркутск, стандартное время)
 
   Postgres timestamp with time zone works fine:
-    timestamptz '2020-08-26T06:53:27.609+07:30'
+    timestamptz'2020-08-26T06:53:27.609+07:30'
     => 2020-08-26 07:23:27.609+08
     
     timestamptz'2023-11-10T08:32:55.798Z'
@@ -35,8 +35,8 @@ fun String.toZonedDateTime() = ZonedDateTime.parse(this, zonedDateTimeFormatter)
 
 
 
-fun ZonedDateTime.toTimestamp(): Long =
-  this.toInstant().toEpochMilli()
+fun ZonedDateTime.toTimestamp(): Long = this.toInstant().toEpochMilli()
+
 fun Long.toZonedDateTime(): ZonedDateTime =
   ZonedDateTime.ofInstant(Instant.ofEpochMilli(this), ZoneId.of("UTC"))
 
@@ -70,7 +70,7 @@ fun String.toLocalDate(): LocalDate = LocalDate.parse(this, localDateFormat)
 
 
 
-fun main(){
+fun main() {
   
   run {
     println("LocalDate test")
