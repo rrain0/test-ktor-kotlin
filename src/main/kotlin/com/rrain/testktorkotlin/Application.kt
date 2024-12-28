@@ -12,8 +12,17 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+  configureLogging()
   configureJsonSerialization()
-  configureHttp()
+  
+  configureHttpForwardedHeaders()
+  configureHttpCacheHeaders()
+  configureHttpCors()
+  configureHttpPartialContent()
+  configureHttpDefaultHeaders()
+  configureHttpAutoHeadResponse()
+  configureStatusPages()
+  
   configureRouting()
   
   

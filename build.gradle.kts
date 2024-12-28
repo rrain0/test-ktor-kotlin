@@ -20,15 +20,6 @@ repositories {
 }
 
 dependencies {
-  // Ktor client
-  implementation("io.ktor:ktor-client-core:${libs.versions.ktor.version}")
-  // Ktor client engine
-  implementation("io.ktor:ktor-client-cio:${libs.versions.ktor.version}")
-  // Ktor client logging
-  implementation("io.ktor:ktor-client-logging:${libs.versions.ktor.version}")
-  // Ktor client content negotiation (response body serialization, request body deserialization, ...)
-  implementation("io.ktor:ktor-client-content-negotiation:${libs.versions.ktor.version}")
-  
   // Ktor server
   implementation(libs.ktor.server.core)
   // ktor server engine
@@ -54,12 +45,24 @@ dependencies {
   // Other ktor plugins
   // Use proxy server forwarded & x-forwarded headers
   implementation(libs.ktor.forwarded.headers)
-  implementation("io.ktor:ktor-server-cors-jvm:${libs.versions.ktor.version}")
+  implementation(libs.ktor.caching.headers)
+  implementation(libs.ktor.auto.head.response)
+  implementation(libs.ktor.status.pages)
+  implementation(libs.ktor.call.id)
+  implementation(libs.ktor.call.logging)
+  implementation("io.ktor:ktor-server-cors:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-server-default-headers:${libs.versions.ktor.version}")
   implementation("io.ktor:ktor-server-resources:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-server-partial-content:${libs.versions.ktor.version}")
   
-  
-  implementation("io.ktor:ktor-server-default-headers-jvm:${libs.versions.ktor.version}")
-  
+  // Ktor client
+  implementation("io.ktor:ktor-client-core:${libs.versions.ktor.version}")
+  // Ktor client engine
+  implementation("io.ktor:ktor-client-cio:${libs.versions.ktor.version}")
+  // Ktor client logging
+  implementation("io.ktor:ktor-client-logging:${libs.versions.ktor.version}")
+  // Ktor client content negotiation (response body serialization, request body deserialization, ...)
+  implementation("io.ktor:ktor-client-content-negotiation:${libs.versions.ktor.version}")
   
   // Testing
   testImplementation(libs.ktor.server.test.host)

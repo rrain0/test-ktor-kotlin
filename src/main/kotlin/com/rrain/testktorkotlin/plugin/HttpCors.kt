@@ -6,19 +6,7 @@ import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.plugins.defaultheaders.*
 import io.ktor.server.plugins.forwardedheaders.*
 
-fun Application.configureHttp() {
-  
-  
-  // Use proxy server forwarded & x-forwarded headers
-  // WARNING: for security, do not include this if not behind a reverse proxy
-  install(ForwardedHeaders)
-  install(XForwardedHeaders)
-  
-  
-  install(DefaultHeaders) {
-    header("X-Engine", "Ktor") // will send this header with each response
-  }
-  
+fun Application.configureHttpCors() {
   
   /*
     CORS - Cross-Origin Resource Sharing
@@ -45,4 +33,5 @@ fun Application.configureHttp() {
     //allowHost("localhost:5173", listOf("http","https"))
     //anyHost()
   }
+  
 }

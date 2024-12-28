@@ -4,10 +4,8 @@
 kotlin-version = "2.1.0"
 ktor-version = "3.0.2"
 jackson-version = "2.18.2"
-mongo-kotlin-coroutine-version = "5.2.1"
 slf4j-version = "2.0.16"
 logback-version = "1.5.15"
-apache-email = "1.6.0"
 
 
 
@@ -35,16 +33,14 @@ ktor-serialization-jackson = { module = "io.ktor:ktor-serialization-jackson-jvm"
 jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson-version" }
 jackson-java-time = { module = "com.fasterxml.jackson.datatype:jackson-datatype-jsr310", version.ref = "jackson-version" }
 
-# Ktor plugins
+# Other ktor plugins
 ktor-websocket = { module = "io.ktor:ktor-server-websockets-jvm", version.ref = "ktor-version" }
 ktor-forwarded-headers = { module = "io.ktor:ktor-server-forwarded-header", version.ref = "ktor-version" }
-
-# Kotlin coroutine MongoDB driver
-mongodb-driver-kotlin-coroutine = { module = "org.mongodb:mongodb-driver-kotlin-coroutine", version.ref = "mongo-kotlin-coroutine-version" }
-mongodb-bson-kotlinx = { module = "org.mongodb:bson-kotlinx", version.ref = "mongo-kotlin-coroutine-version" }
-
-# Mail sending
-apache-email = { module = "org.apache.commons:commons-email", version.ref = "apache-email" }
+ktor-caching-headers = { module = "io.ktor:ktor-server-caching-headers", version.ref = "ktor-version" }
+ktor-auto-head-response = { module = "io.ktor:ktor-server-auto-head-response", version.ref = "ktor-version" }
+ktor-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor-version" }
+ktor-call-id = { module = "io.ktor:ktor-server-call-id", version.ref = "ktor-version" }
+ktor-call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor-version" }
 
 # Testing
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor-version" }
