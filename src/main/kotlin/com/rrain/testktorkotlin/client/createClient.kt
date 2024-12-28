@@ -1,7 +1,6 @@
 package com.rrain.testktorkotlin.client
 
-import com.rrain.testktorkotlin.client.plugins.configureJacksonPrettier
-import com.rrain.testktorkotlin.client.plugins.configureJacksonTypes
+import com.rrain.testktorkotlin.service.json.configureJson
 import io.ktor.client.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.plugins.contentnegotiation.*
@@ -32,8 +31,7 @@ fun createClient() = HttpClient(CIO) {
   // install Content Negotiation plugin
   install(ContentNegotiation) {
     jackson {
-      configureJacksonPrettier()
-      configureJacksonTypes()
+      configureJson()
     }
   }
   

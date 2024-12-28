@@ -1,4 +1,4 @@
-package com.rrain.testktorkotlin.util
+package com.rrain.testktorkotlin.util.Uuid
 
 import java.util.*
 

@@ -1,7 +1,7 @@
 package com.rrain.testktorkotlin.client.`yandex-translate`
 
 import com.rrain.testktorkotlin.client.createClient
-import com.rrain.testktorkotlin.client.plugins.createJacksonJson5Mapper
+import com.rrain.testktorkotlin.service.json.createJacksonJson5Mapper
 import com.rrain.testktorkotlin.util.cast
 import com.rrain.testktorkotlin.util.getResourcePath
 import com.rrain.testktorkotlin.util.println
