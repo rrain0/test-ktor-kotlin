@@ -15,6 +15,10 @@ fun Application.configureHttpCacheHeaders() {
   // "must-revalidate" means that after cache becomes stale, browser must ask server if it can reuse this cache
   // "no-cache" = "max-age=0, must-revalidate"
   
+  // "no-cache" - Эта директива означает, что кэшированные версии запрошенного ресурса нельзя использовать
+  //              без предварительной проверки наличия обновленной версии. Обычно это делается с помощью ETag.
+  // "no-store" - Ответ с директивой no-store нельзя кэшировать нигде и никогда.
+  
   // Global cache control
   // Exception: Installing RouteScopedPlugin to application and route is not supported. Consider moving application level install to routing root.
   /*
