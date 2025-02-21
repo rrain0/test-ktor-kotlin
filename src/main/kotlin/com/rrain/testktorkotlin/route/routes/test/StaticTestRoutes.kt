@@ -29,9 +29,9 @@ fun Application.configureStaticTestRoutes() {
     
     // Any request from the root URL / is mapped directly
     // to the contents of the ZIP file text-files.zip in file system.
-    staticZip("/", "", Paths.get("files/text-files.zip")) {
+    /*staticZip("/", "", Paths.get("files/text-files.zip")) {
       enableAutoHeadResponse()
-    }
+    }*/
     
     
     
