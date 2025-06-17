@@ -1,15 +1,26 @@
 
+
+val kotlinV = "2.1.21"
+val kotlinCoroutinesV = "1.10.2"
+val kotlinDateTimeV = "0.6.2"
+val ktorV = "3.2.0"
+val jacksonV = "2.19.0"
+val slf4jV = "2.0.17"
+val logbackV = "1.5.18"
 plugins {
-  alias(libs.plugins.kotlin.jvm)
-  alias(libs.plugins.ktor)
-  alias(libs.plugins.kotlin.plugin.serialization)
+  val kotlinV = "2.1.21"
+  val ktorV = "3.2.0"
+  
+  kotlin("jvm") version kotlinV
+  kotlin("plugin.serialization") version kotlinV
+  id("io.ktor.plugin") version ktorV
 }
 
 group = "com.rrain.testktorkotlin"
 version = "0.0.1"
 
 application {
-  mainClass.set("io.ktor.server.jetty.jakarta.EngineMain")
+  mainClass = "io.ktor.server.jetty.jakarta.EngineMain"
   
   val isDevelopment: Boolean = project.ext.has("development")
   applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -20,55 +31,66 @@ repositories {
 }
 
 dependencies {
-  // Kotlin
+  // Kotlin Coroutines
   // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
-  implementation(libs.kotlin.coroutines.core)
+  implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesV")
+  // Kotlin DateTime
+  // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-datetime
+  implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinDateTimeV")
   
-  // Ktor server
-  implementation(libs.ktor.server.core)
-  // ktor server engine
-  implementation(libs.ktor.server.jetty.jakarta)
+  // Ktor server core
+  implementation("io.ktor:ktor-server-core")
+  // Ktor server core JVM
+  implementation("io.ktor:ktor-server-core-jvm")
+  // Ktor server engine
+  implementation("io.ktor:ktor-server-jetty-jakarta")
+  // To be removed in the future, now it can be necessary for some plugins
+  implementation("io.ktor:ktor-server-host-common")
   
-  // SLF4J - Simple Logging Facade for Java
-  implementation(libs.slf4j.api)
-  implementation(libs.jcl.over.slf4j)
-  implementation(libs.logback.core)
-  implementation(libs.logback.classic)
-  
-  // Ktor client content negotiation (response body serialization, request body deserialization, ...)
-  implementation(libs.ktor.server.content.negotiation)
+  // Ktor server content negotiation (response body serialization, request body deserialization, ...)
+  implementation("io.ktor:ktor-server-content-negotiation")
   // Ktor serialization via Jackson
-  implementation(libs.ktor.serialization.jackson)
+  implementation("io.ktor:ktor-serialization-jackson")
   // Kotlin Jackson Support
   // https://github.com/FasterXML/jackson-module-kotlin
-  implementation(libs.jackson.module.kotlin)
+  implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonV")
   // Java Time Jackson Support
   // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
-  implementation(libs.jackson.java.time)
+  implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonV")
+  
+  // SLF4J - Simple Logging Facade for Java
+  implementation("org.slf4j:slf4j-api:$slf4jV")
+  // Транзитивная зависимость без которой в рантайме может не найтись класс
+  implementation("org.slf4j:jcl-over-slf4j:$slf4jV")
+  // Транзитивная зависимость без которой в рантайме может не найтись класс
+  implementation("ch.qos.logback:logback-core:$logbackV")
+  // Транзитивная зависимость без которой в рантайме может не найтись класс
+  implementation("ch.qos.logback:logback-classic:$logbackV")
   
   // Other ktor plugins
+  implementation("io.ktor:ktor-server-websockets")
   // Use proxy server forwarded & x-forwarded headers
-  implementation(libs.ktor.forwarded.headers)
-  implementation(libs.ktor.caching.headers)
-  implementation(libs.ktor.auto.head.response)
-  implementation(libs.ktor.status.pages)
-  implementation(libs.ktor.call.id)
-  implementation(libs.ktor.call.logging)
-  implementation("io.ktor:ktor-server-cors:${libs.versions.ktor.version}")
-  implementation("io.ktor:ktor-server-default-headers:${libs.versions.ktor.version}")
-  implementation("io.ktor:ktor-server-resources:${libs.versions.ktor.version}")
-  implementation("io.ktor:ktor-server-partial-content:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-server-forwarded-header")
+  implementation("io.ktor:ktor-server-caching-headers")
+  implementation("io.ktor:ktor-server-auto-head-response")
+  implementation("io.ktor:ktor-server-status-pages")
+  implementation("io.ktor:ktor-server-call-id")
+  implementation("io.ktor:ktor-server-call-logging")
+  implementation("io.ktor:ktor-server-cors")
+  implementation("io.ktor:ktor-server-default-headers")
+  implementation("io.ktor:ktor-server-resources")
+  implementation("io.ktor:ktor-server-partial-content")
   
   // Ktor client
-  implementation("io.ktor:ktor-client-core:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-client-core")
   // Ktor client engine
-  implementation("io.ktor:ktor-client-cio:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-client-cio")
   // Ktor client logging
-  implementation("io.ktor:ktor-client-logging:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-client-logging")
   // Ktor client content negotiation (response body serialization, request body deserialization, ...)
-  implementation("io.ktor:ktor-client-content-negotiation:${libs.versions.ktor.version}")
+  implementation("io.ktor:ktor-client-content-negotiation")
   
   // Testing
-  testImplementation(libs.ktor.server.test.host)
-  testImplementation(libs.kotlin.test.junit)
+  testImplementation("io.ktor:ktor-server-test-host")
+  testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinV")
 }
