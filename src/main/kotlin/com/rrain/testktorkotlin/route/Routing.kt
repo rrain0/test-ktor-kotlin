@@ -12,6 +12,8 @@ import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
   
+  install(IgnoreTrailingSlash)
+  
   configureMainRoutes()
   configureTestRoutes()
   configureResourceRouting()
@@ -25,7 +27,7 @@ fun Application.configureRouting() {
     
     // Fallback route handler if no match
     // The {...} is a tailcard and matches any request that hasn't been matched yet.
-    get("{...}"){
+    get("{...}") {
       call.respond("no matching route")
     }
   }

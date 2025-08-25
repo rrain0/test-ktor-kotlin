@@ -1,18 +1,16 @@
 
 
 val kotlinV = "2.1.21"
-val kotlinCoroutinesV = "1.10.2"
-val kotlinDateTimeV = "0.6.2"
-val ktorV = "3.2.0"
-val jacksonV = "2.19.0"
-val slf4jV = "2.0.17"
-val logbackV = "1.5.18"
 plugins {
   val kotlinV = "2.1.21"
   val ktorV = "3.2.0"
   
+  // Kotlin
   kotlin("jvm") version kotlinV
+  // Kotlin serialization
   kotlin("plugin.serialization") version kotlinV
+  
+  // Ktor
   id("io.ktor.plugin") version ktorV
 }
 
@@ -32,9 +30,11 @@ repositories {
 
 dependencies {
   // Kotlin Coroutines
+  val kotlinCoroutinesV = "1.10.2"
   // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutinesV")
   // Kotlin DateTime
+  val kotlinDateTimeV = "0.6.2"
   // https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-datetime
   implementation("org.jetbrains.kotlinx:kotlinx-datetime:$kotlinDateTimeV")
   
@@ -52,12 +52,15 @@ dependencies {
   // Ktor serialization via Jackson
   implementation("io.ktor:ktor-serialization-jackson")
   // Kotlin Jackson Support
+  val jacksonV = "2.19.0"
   // https://github.com/FasterXML/jackson-module-kotlin
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonV")
   // Java Time Jackson Support
   // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310
   implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonV")
   
+  val slf4jV = "2.0.17"
+  val logbackV = "1.5.18"
   // SLF4J - Simple Logging Facade for Java
   implementation("org.slf4j:slf4j-api:$slf4jV")
   // Транзитивная зависимость без которой в рантайме может не найтись класс
